@@ -34,6 +34,10 @@ public class Author {
         if (this.getClass() != other.getClass()) {
             return false;
         }
+        if (this == other)
+            return true;
+        if (other == null)
+            return false;
         Author otherAuthor = (Author) other;
         String fullName = authorFirstName + " " + authorSecondName;
         String fullNameOther = otherAuthor.authorFirstName + " " + otherAuthor.authorSecondName;

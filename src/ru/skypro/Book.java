@@ -37,7 +37,7 @@ public class Book {
     }
 
     public String toString () {
-        return "Имя автора: "+ bookAuthor.toString() + ", название книги: "+ bookName + ", год выпуска: "+ publishYear;
+        return bookAuthor.toString() + ", название книги: "+ bookName + ", год выпуска: "+ publishYear;
     }
 
     public boolean equals ( Object other ) {
@@ -45,6 +45,10 @@ public class Book {
         if (this.getClass() != other.getClass()) {
             return false;
         }
+        if (this == other)
+            return true;
+        if (other == null)
+            return false;
         Book otherBook = (Book) other;
         boolean equal = (bookName == otherBook.bookName && bookAuthor.equals(otherBook.bookAuthor));
         return equal;
